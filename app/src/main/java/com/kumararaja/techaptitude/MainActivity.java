@@ -1,6 +1,7 @@
 package com.kumararaja.techaptitude;
 
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,12 +14,14 @@ public class MainActivity extends AppCompatActivity {
     EditText username, password;
     Button login;
     TextView forget;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
+        ActionBar ab=getSupportActionBar();
+        ab.setTitle("Aptitude");
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
