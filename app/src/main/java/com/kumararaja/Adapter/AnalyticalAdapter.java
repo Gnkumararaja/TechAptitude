@@ -2,37 +2,29 @@ package com.kumararaja.Adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.kumararaja.Model.NumericModelData;
 import com.kumararaja.techaptitude.R;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class NumericAdapter extends RecyclerView.Adapter<NumericAdapter.ViewHolder> {
+public class AnalyticalAdapter extends RecyclerView.Adapter<AnalyticalAdapter.ViewHolder> {
 
-   // String[] SubjectValues;
-    List<NumericModelData> list= Collections.emptyList();
+    List<NumericModelData.Analytic> list= Collections.emptyList();
     Context context;
-    private OnDataListener dListener;
+    private OnADataListener dListener;
 
-    public NumericAdapter(List<NumericModelData> list,Context contextt, OnDataListener onDataListener) {
+    public AnalyticalAdapter(List<NumericModelData.Analytic> list,Context contextt, OnADataListener onDataListener) {
         this.list = list;
         this.context = contextt;
         this.dListener=onDataListener;
     }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -43,17 +35,9 @@ public class NumericAdapter extends RecyclerView.Adapter<NumericAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-        holder.txtView.setText(list.get(position).getNumericValues());
-      /*  holder.txtViewo.setText(list.get(position).getLogic());
-        holder.txtViewtwo.setText(list.get(position).getReason());
-        holder.txtViewthree.setText(list.get(position).getMathematical());
-        holder.txtViewfour.setText(list.get(position).getWordproblem());
-        holder.txtfive.setText(list.get(position).getBlood_relations());*/
-
-
+    public void onBindViewHolder(@NonNull AnalyticalAdapter.ViewHolder holder, int position) {
+        holder.txtView.setText(list.get(position).getNames());
     }
-
 
     @Override
     public int getItemCount() {
@@ -63,18 +47,13 @@ public class NumericAdapter extends RecyclerView.Adapter<NumericAdapter.ViewHold
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView txtView, txtViewo, txtViewtwo,txtViewthree,txtViewfour,txtfive;
         Context context;
-        OnDataListener dataListener;
+        OnADataListener dataListener;
 
 
-        public ViewHolder(@NonNull View itemView, final OnDataListener dataListenerr) {
+        public ViewHolder(@NonNull View itemView, final OnADataListener dataListenerr) {
             super(itemView);
 
             this.txtView = itemView.findViewById(R.id.arithmatic);
-            /*this.txtViewo = itemView.findViewById(R.id.logic);
-            this.txtViewtwo = itemView.findViewById(R.id.reasonn);
-            this.txtViewthree = itemView.findViewById(R.id.maths);
-            this.txtViewfour = itemView.findViewById(R.id.word);
-            this.txtfive = itemView.findViewById(R.id.blood);*/
             this.dataListener = dataListenerr;
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -89,8 +68,9 @@ public class NumericAdapter extends RecyclerView.Adapter<NumericAdapter.ViewHold
 
     }
 
-    public interface OnDataListener{
+    public interface OnADataListener{
         void dataClick(int position);
     }
+
 
 }

@@ -1,113 +1,174 @@
 package com.kumararaja.Model;
 
-public class NumericModelData {
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    String arithmatic,logic,reason,mathematical, wordproblem, blood_relations;
+public class NumericModelData implements Parcelable{
 
-    public NumericModelData(String arithmatic, String logic, String reason, String mathematical,String wordproblem, String blood_relations){
-        this.arithmatic=arithmatic;
-        this.logic=logic;
-        this.reason=reason;
-        this.mathematical=mathematical;
-        this.wordproblem=wordproblem;
-        this.blood_relations=blood_relations;
+    String numericValues;
+
+    public NumericModelData(String numericValues){
+        this.numericValues=numericValues;
     }
 
-    public String getArithmatic() {
-        return arithmatic;
+    protected NumericModelData(Parcel in) {
+        numericValues = in.readString();
     }
 
-    public void setArithmatic(String arithmatic) {
-        this.arithmatic = arithmatic;
-    }
-
-    public String getLogic() {
-        return logic;
-    }
-
-    public void setLogic(String logic) {
-        this.logic = logic;
-    }
-
-    public String getReason() {
-        return reason;
-    }
-
-    public void setReason(String reason) {
-        this.reason = reason;
-    }
-
-    public String getMathematical() {
-        return mathematical;
-    }
-
-    public void setMathematical(String mathematical) {
-        this.mathematical = mathematical;
-    }
-    public String getWordproblem() {
-        return wordproblem;
-    }
-
-    public void setWordproblem(String wordproblem) {
-        this.wordproblem = wordproblem;
-    }
-    public String getBlood_relations() {
-        return blood_relations;
-    }
-
-    public void setBlood_relations(String blood_relations) {
-        this.blood_relations = blood_relations;
-    }
-
-    public static class Verbal{
-        String spotting_errors,idoms_phrases,anonyms,synonyms, vocabulary;
-
-        public Verbal(String spotting_errors, String idoms_phrases, String anonyms, String synonyms, String vocabulary) {
-            this.spotting_errors = spotting_errors;
-            this.idoms_phrases = idoms_phrases;
-            this.anonyms = anonyms;
-            this.synonyms = synonyms;
-            this.vocabulary = vocabulary;
+    public static final Creator<NumericModelData> CREATOR = new Creator<NumericModelData>() {
+        @Override
+        public NumericModelData createFromParcel(Parcel in) {
+            return new NumericModelData(in);
         }
 
-        public String getSpotting_errors() {
-            return spotting_errors;
+        @Override
+        public NumericModelData[] newArray(int size) {
+            return new NumericModelData[size];
+        }
+    };
+
+    public String getNumericValues() {
+        return numericValues;
+    }
+
+    public void setNumericValues(String numericValues) {
+        this.numericValues = numericValues;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(numericValues);
+    }
+
+    public static class Verbal implements Parcelable{
+        String verbalNames;
+
+        public Verbal(String verbalNames) {
+            this.verbalNames = verbalNames;
         }
 
-        public void setSpotting_errors(String spotting_errors) {
-            this.spotting_errors = spotting_errors;
+        protected Verbal(Parcel in) {
+            verbalNames = in.readString();
         }
 
-        public String getIdoms_phrases() {
-            return idoms_phrases;
+        public static final Creator<Verbal> CREATOR = new Creator<Verbal>() {
+            @Override
+            public Verbal createFromParcel(Parcel in) {
+                return new Verbal(in);
+            }
+
+            @Override
+            public Verbal[] newArray(int size) {
+                return new Verbal[size];
+            }
+        };
+
+        public String getVerbalNames() {
+            return verbalNames;
         }
 
-        public void setIdoms_phrases(String idoms_phrases) {
-            this.idoms_phrases = idoms_phrases;
+        public void setVerbalNames(String verbalNames) {
+            this.verbalNames = verbalNames;
         }
 
-        public String getAnonyms() {
-            return anonyms;
+        @Override
+        public int describeContents() {
+            return 0;
         }
 
-        public void setAnonyms(String anonyms) {
-            this.anonyms = anonyms;
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeString(verbalNames);
+        }
+    }
+
+    public static class Analytic implements Parcelable {
+        String name;
+
+        public Analytic(String names) {
+            name = names;
+
         }
 
-        public String getSynonyms() {
-            return synonyms;
+        protected Analytic(Parcel in) {
+            name = in.readString();
         }
 
-        public void setSynonyms(String synonyms) {
-            this.synonyms = synonyms;
+        public static final Creator<Analytic> CREATOR = new Creator<Analytic>() {
+            @Override
+            public Analytic createFromParcel(Parcel in) {
+                return new Analytic(in);
+            }
+
+            @Override
+            public Analytic[] newArray(int size) {
+                return new Analytic[size];
+            }
+        };
+
+        public String getNames() {
+            return name;
         }
 
-        public String getVocabulary() {
-            return vocabulary;
+        public void setNames(String names) {
+            this.name = names;
         }
 
-        public void setVocabulary(String vocabulary) {
-            this.vocabulary = vocabulary;
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeString(name);
+        }
+    }
+
+    public static class Taketest implements Parcelable{
+        String types;
+
+        public Taketest(String type) {
+            this.types=type;
+        }
+
+        protected Taketest(Parcel in) {
+            types = in.readString();
+        }
+
+        public static final Creator<Taketest> CREATOR = new Creator<Taketest>() {
+            @Override
+            public Taketest createFromParcel(Parcel in) {
+                return new Taketest(in);
+            }
+
+            @Override
+            public Taketest[] newArray(int size) {
+                return new Taketest[size];
+            }
+        };
+
+        public String getTypes() {
+            return types;
+        }
+
+        public void setTypes(String types) {
+            this.types = types;
+        }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeString(types);
         }
     }
 

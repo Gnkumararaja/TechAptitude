@@ -9,64 +9,70 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.kumararaja.Interface.NumericInterface;
+import com.kumararaja.Model.NumericModelData;
 import com.kumararaja.techaptitude.R;
+import com.kumararaja.techaptitude.TesttypeActivity;
+
+import java.util.Collections;
+import java.util.List;
 
 public class TestAdapter extends RecyclerView.Adapter<TestAdapter.ViewHolder> {
 
-    String[] SubjectValues;
+    List<NumericModelData.Taketest> list= Collections.emptyList();
     Context context;
-    private NumericInterface clickListener;
-    View view1;
-    NumericAdapter.ViewHolder viewHolder1;
+    private OnTestDataListener dListener;
 
 
-    public TestAdapter(Context contextt, String[] subject) {
-        this.SubjectValues = subject;
+    public TestAdapter(Context contextt , List<NumericModelData.Taketest> list, OnTestDataListener onDataListener) {
+        this.list = list;
         this.context = contextt;
+        this.dListener=onDataListener;
     }
-
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int position) {
         LayoutInflater layoutInflater = LayoutInflater.from(viewGroup.getContext());
         View listItem = layoutInflater.inflate(R.layout.test_list_items, viewGroup, false);
-        TestAdapter.ViewHolder viewHolder = new TestAdapter.ViewHolder(listItem);
+        ViewHolder viewHolder = new ViewHolder(listItem,dListener);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull TestAdapter.ViewHolder holder, final int position) {
-        holder.txtView.setText(SubjectValues[position]);
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(context, "Clicked"+position, Toast.LENGTH_SHORT).show();
-            }
-        });
+        holder.txtView.setText(list.get(position).getTypes());
 
     }
 
 
     @Override
     public int getItemCount() {
-        return SubjectValues.length;
+        return list.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView txtView, txtViewo, txtViewtwo;
         Context context;
+        OnTestDataListener dataListener;
 
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView,final OnTestDataListener dataListenerr) {
             super(itemView);
 
             this.txtView = itemView.findViewById(R.id.text_easy);
-            /*this.txtViewo = itemView.findViewById(R.id.text_normal);
-            this.txtViewtwo =itemView.findViewById(R.id.text_hard);
-*/
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dataListenerr.dataClick(getAdapterPosition());
+                }
+            });
 
         }
 
+
+
+    }
+
+    public interface OnTestDataListener{
+        void dataClick(int position);
     }
 }

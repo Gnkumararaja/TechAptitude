@@ -2,17 +2,18 @@ package com.kumararaja.techaptitude;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.kumararaja.Adapter.NumericAdapter;
 import com.kumararaja.Adapter.VerbalAdapter;
-import com.kumararaja.Interface.NumericInterface;
 import com.kumararaja.Model.NumericModelData;
 
 import java.util.ArrayList;
@@ -26,21 +27,8 @@ public class VerbalFragment extends Fragment implements VerbalAdapter.OnDataList
 
     Context context;
     RecyclerView recyclerView;
-    NumericInterface onInterfce;
     RecyclerView.Adapter recyclerViewAdapter;
     RecyclerView.LayoutManager recylerViewLayoutManager;
-  /*  String[] subjects =
-            {
-                    "ARITHMATIC",
-                    "LOGIC",
-                    "REASONING",
-                    "MATHEMATICS",
-                    "WORD PROBLEMS",
-                    "BLOOD RELATIONS"
-            };*/
-
-    //Context context;
-
 
 
     public VerbalFragment() {
@@ -51,27 +39,35 @@ public class VerbalFragment extends Fragment implements VerbalAdapter.OnDataList
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v=inflater.inflate(R.layout.fragment_verbal, container, false);
+        View v = inflater.inflate(R.layout.fragment_verbal, container, false);
         // Inflate the layout for this fragment
-        recyclerView=v.findViewById(R.id.verbal_recycle);
-        recylerViewLayoutManager=new LinearLayoutManager(context);
+        recyclerView = v.findViewById(R.id.verbal_recycle);
+        recylerViewLayoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(recylerViewLayoutManager);
-        recyclerViewAdapter=new VerbalAdapter(model(),context,this);
+        recyclerViewAdapter = new VerbalAdapter(model(), context, this);
         recyclerView.setAdapter(recyclerViewAdapter);
         recyclerView.setHasFixedSize(true);
         return v;
     }
 
-    private List<NumericModelData.Verbal> model(){
+    private List<NumericModelData.Verbal> model() {
         List<NumericModelData.Verbal> data = new ArrayList<>();
 
-        data.add(new NumericModelData.Verbal("SPOTTING ERRORS", "IDOMS AND PHRASES", "ANONYMS", "SYNONYMS", "VOCABULARY"));
+        data.add(new NumericModelData.Verbal("SPOTTING ERRORS"));
+        data.add(new NumericModelData.Verbal("IDOMS AND PHRASES"));
+        data.add(new NumericModelData.Verbal("ANONYMS"));
+        data.add(new NumericModelData.Verbal("SYNONYMS"));
+        data.add(new NumericModelData.Verbal("VOCABULARY"));
 
         return data;
     }
 
     @Override
     public void dataClick(int position) {
+        Log.v("Clicked", "" + position);
+        Intent i =new Intent(getActivity(),VerbalQuestions.class);
+        i.putExtra("Items",model().get(position));
+        startActivity(i);
 
     }
 }

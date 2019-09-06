@@ -50,12 +50,17 @@
 
     </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView
+   <!-- <android.support.v7.widget.CardView
         android:id="@+id/numeric_cardviewo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        app:cardCornerRadius="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:cardBackgroundColor="#E91E63"
+        app:cardCornerRadius="5dp"
+        app:cardMaxElevation="1dp"
+        app:contentPadding="10dp"
+        app:cardPreventCornerOverlap="true"
         app:cardElevation="5dp"
         app:cardUseCompatPadding="true">
 
@@ -67,6 +72,7 @@
             <TextView
                 android:id="@+id/logic"
                 android:text="Name Sub topic"
+                android:textColor="@android:color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
@@ -92,8 +98,13 @@
         android:id="@+id/numeric_cardviewthree"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        app:cardCornerRadius="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:cardBackgroundColor="#E91E63"
+        app:cardCornerRadius="5dp"
+        app:cardMaxElevation="1dp"
+        app:contentPadding="10dp"
+        app:cardPreventCornerOverlap="true"
         app:cardElevation="5dp"
         app:cardUseCompatPadding="true">
 
@@ -108,6 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
+                android:textColor="@android:color/white"
                 android:textAppearance="?android:attr/textAppearanceLarge"/>
 
             <LinearLayout
@@ -130,8 +142,13 @@
         android:id="@+id/numeric_cardviewfour"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        app:cardCornerRadius="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:cardBackgroundColor="#E91E63"
+        app:cardCornerRadius="5dp"
+        app:cardMaxElevation="1dp"
+        app:contentPadding="10dp"
+        app:cardPreventCornerOverlap="true"
         app:cardElevation="5dp"
         app:cardUseCompatPadding="true">
 
@@ -143,6 +160,7 @@
             <TextView
                 android:id="@+id/maths"
                 android:text="Name Sub topic"
+                android:textColor="@android:color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
@@ -168,8 +186,13 @@
         android:id="@+id/numeric_cardviewfive"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        app:cardCornerRadius="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:cardBackgroundColor="#E91E63"
+        app:cardCornerRadius="5dp"
+        app:cardMaxElevation="1dp"
+        app:contentPadding="10dp"
+        app:cardPreventCornerOverlap="true"
         app:cardElevation="5dp"
         app:cardUseCompatPadding="true">
 
@@ -181,6 +204,7 @@
             <TextView
                 android:id="@+id/word"
                 android:text="Name Sub topic"
+                android:textColor="@android:color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
@@ -206,8 +230,13 @@
         android:id="@+id/numeric_cardviewsix"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        app:cardCornerRadius="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:cardBackgroundColor="#E91E63"
+        app:cardCornerRadius="5dp"
+        app:cardMaxElevation="1dp"
+        app:contentPadding="10dp"
+        app:cardPreventCornerOverlap="true"
         app:cardElevation="5dp"
         app:cardUseCompatPadding="true">
 
@@ -219,6 +248,7 @@
             <TextView
                 android:id="@+id/blood"
                 android:text="Name Sub topic"
+                android:textColor="@android:color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
@@ -238,5 +268,5 @@
             </LinearLayout>
         </LinearLayout>
 
-    </android.support.v7.widget.CardView>
+    </android.support.v7.widget.CardView>-->
 </LinearLayout>

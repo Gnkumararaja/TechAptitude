@@ -2,17 +2,20 @@ package com.kumararaja.techaptitude;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.kumararaja.Adapter.AnalyticalAdapter;
 import com.kumararaja.Adapter.NumericAdapter;
-import com.kumararaja.Interface.NumericInterface;
+import com.kumararaja.Adapter.VerbalAdapter;
 import com.kumararaja.Model.NumericModelData;
 
 import java.util.ArrayList;
@@ -22,21 +25,12 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AnalyticFragment extends Fragment implements NumericAdapter.OnDataListener {
+public class AnalyticFragment extends Fragment implements AnalyticalAdapter.OnADataListener {
 
     Context context;
     RecyclerView recyclerView;
     RecyclerView.Adapter recyclerViewAdapter;
     RecyclerView.LayoutManager recylerViewLayoutManager;
-    String[] subjects =
-            {
-                    "ARITHMATIC",
-                    "LOGIC",
-                    "REASONING",
-                    "MATHEMATICS",
-                    "WORD PROBLEMS",
-                    "BLOOD RELATIONS"
-            };
 
 
     public AnalyticFragment() {
@@ -52,23 +46,33 @@ public class AnalyticFragment extends Fragment implements NumericAdapter.OnDataL
         recyclerView=v.findViewById(R.id.analytic_recycle);
         recylerViewLayoutManager=new LinearLayoutManager(context);
         recyclerView.setLayoutManager(recylerViewLayoutManager);
-        recyclerViewAdapter=new NumericAdapter(model(), context,this);
+        recyclerViewAdapter=new AnalyticalAdapter(model(), context,this);
         recyclerView.setAdapter(recyclerViewAdapter);
         recyclerView.setHasFixedSize(true);
         return v;
     }
 
-    @Override
-    public void dataClick(int position) {
 
 
-    }
+    private List<NumericModelData.Analytic> model(){
+        List<NumericModelData.Analytic> data = new ArrayList<>();
 
-    private List<NumericModelData> model(){
-        List<NumericModelData> data = new ArrayList<>();
+        data.add(new NumericModelData.Analytic("ANALOGY"));
+        data.add(new NumericModelData.Analytic("CLASSIFICATION"));
+        data.add(new NumericModelData.Analytic("CLOCKS"));
+        data.add(new NumericModelData.Analytic("CUBES"));
+        data.add(new NumericModelData.Analytic("DICE"));
 
-        data.add(new NumericModelData("ARITHMATIC", "LOGIC", "REASONING", "MATHEMATICS", "WORD PROBLEMS", "BLOOD RELATIONS"));
 
         return data;
+    }
+
+    @Override
+    public void dataClick(int position) {
+        Log.v("CurrentPosition",""+position);
+        Intent i =new Intent(getActivity(),AnalyticalQuestions.class);
+        i.putExtra("Data",model().get(position));
+        startActivity(i);
+
     }
 }

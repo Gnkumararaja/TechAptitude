@@ -35,11 +35,7 @@ public class VerbalAdapter extends RecyclerView.Adapter<VerbalAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.txtView.setText(list.get(position).getSpotting_errors());
-        holder.txtViewo.setText(list.get(position).getIdoms_phrases());
-        holder.txtViewtwo.setText(list.get(position).getAnonyms());
-        holder.txtViewthree.setText(list.get(position).getSynonyms());
-        holder.txtViewfour.setText(list.get(position).getVocabulary());
+        holder.txtView.setText(list.get(position).getVerbalNames());
     }
 
     @Override
@@ -57,11 +53,6 @@ public class VerbalAdapter extends RecyclerView.Adapter<VerbalAdapter.ViewHolder
             super(itemView);
 
             this.txtView = itemView.findViewById(R.id.arithmatic);
-            this.txtViewo = itemView.findViewById(R.id.logic);
-            this.txtViewtwo = itemView.findViewById(R.id.reasonn);
-            this.txtViewthree = itemView.findViewById(R.id.maths);
-            this.txtViewfour = itemView.findViewById(R.id.word);
-            this.txtfive = itemView.findViewById(R.id.blood);
             this.dataListener = dataListenerr;
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

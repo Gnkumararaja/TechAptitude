@@ -2,6 +2,7 @@ package com.kumararaja.techaptitude;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -17,7 +18,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.kumararaja.Adapter.NumericAdapter;
-import com.kumararaja.Interface.NumericInterface;
 import com.kumararaja.Model.NumericModelData;
 
 import java.util.ArrayList;
@@ -31,7 +31,6 @@ public class NumericFragment extends Fragment implements NumericAdapter.OnDataLi
 
     Context context;
     RecyclerView recyclerView;
-    NumericInterface onInterfce;
     RecyclerView.Adapter recyclerViewAdapter;
     RecyclerView.LayoutManager recylerViewLayoutManager;
 /*
@@ -79,6 +78,9 @@ public class NumericFragment extends Fragment implements NumericAdapter.OnDataLi
     @Override
     public void dataClick(int position) {
         Log.v("Click", "Clicked" + position);
+        Intent i = new Intent(getActivity(),NumericQuestions.class);
+        i.putExtra("Item",fill_data().get(position));
+        startActivity(i);
 
     }
 
@@ -86,7 +88,12 @@ public class NumericFragment extends Fragment implements NumericAdapter.OnDataLi
 
         List<NumericModelData> data = new ArrayList<>();
 
-        data.add(new NumericModelData("ARITHMATIC", "LOGIC", "REASONING", "MATHEMATICS", "WORD PROBLEMS", "BLOOD RELATIONS"));
+        data.add(new NumericModelData("ARITHMATIC" ));
+        data.add(new NumericModelData("LOGIC"));
+        data.add(new NumericModelData("REASONING"));
+        data.add(new NumericModelData("MATHEMATICS"));
+        data.add(new NumericModelData("WORD PROBLEMS"));
+        data.add(new NumericModelData("BLOOD RELATIONS"));
 
     return data;
     }
