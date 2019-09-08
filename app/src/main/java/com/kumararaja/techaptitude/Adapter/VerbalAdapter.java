@@ -1,4 +1,4 @@
-package com.kumararaja.Adapter;
+package com.kumararaja.techaptitude.Adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,19 +8,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.kumararaja.Model.NumericModelData;
+import com.kumararaja.techaptitude.Model.NumericModelData;
 import com.kumararaja.techaptitude.R;
 
 import java.util.Collections;
 import java.util.List;
 
-public class AnalyticalAdapter extends RecyclerView.Adapter<AnalyticalAdapter.ViewHolder> {
-
-    List<NumericModelData.Analytic> list= Collections.emptyList();
+public class VerbalAdapter extends RecyclerView.Adapter<VerbalAdapter.ViewHolder> {
+    List<NumericModelData.Verbal> list= Collections.emptyList();
     Context context;
-    private OnADataListener dListener;
+    private OnDataListener dListener;
 
-    public AnalyticalAdapter(List<NumericModelData.Analytic> list,Context contextt, OnADataListener onDataListener) {
+    public VerbalAdapter(List<NumericModelData.Verbal> list,Context contextt, OnDataListener onDataListener) {
         this.list = list;
         this.context = contextt;
         this.dListener=onDataListener;
@@ -28,15 +27,15 @@ public class AnalyticalAdapter extends RecyclerView.Adapter<AnalyticalAdapter.Vi
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        LayoutInflater layoutInflater = LayoutInflater.from(viewGroup.getContext());
-        View listItem = layoutInflater.inflate(R.layout.activity_numeric_list, viewGroup, false);
-        ViewHolder viewHolder = new ViewHolder(listItem,dListener);
-        return viewHolder;
+            LayoutInflater layoutInflater = LayoutInflater.from(viewGroup.getContext());
+            View listItem = layoutInflater.inflate(R.layout.activity_numeric_list, viewGroup, false);
+            ViewHolder viewHolder = new ViewHolder(listItem,dListener);
+            return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AnalyticalAdapter.ViewHolder holder, int position) {
-        holder.txtView.setText(list.get(position).getNames());
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.txtView.setText(list.get(position).getVerbalNames());
     }
 
     @Override
@@ -47,10 +46,10 @@ public class AnalyticalAdapter extends RecyclerView.Adapter<AnalyticalAdapter.Vi
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView txtView, txtViewo, txtViewtwo,txtViewthree,txtViewfour,txtfive;
         Context context;
-        OnADataListener dataListener;
+        OnDataListener dataListener;
 
 
-        public ViewHolder(@NonNull View itemView, final OnADataListener dataListenerr) {
+        public ViewHolder(@NonNull View itemView, final OnDataListener dataListenerr) {
             super(itemView);
 
             this.txtView = itemView.findViewById(R.id.arithmatic);
@@ -68,7 +67,7 @@ public class AnalyticalAdapter extends RecyclerView.Adapter<AnalyticalAdapter.Vi
 
     }
 
-    public interface OnADataListener{
+    public interface OnDataListener{
         void dataClick(int position);
     }
 

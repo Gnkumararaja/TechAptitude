@@ -1,4 +1,4 @@
-package com.kumararaja.techaptitude;
+package com.kumararaja.techaptitude.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.kumararaja.techaptitude.R;
 
 public class MainActivity extends AppCompatActivity {
 

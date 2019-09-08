@@ -1,4 +1,4 @@
-package com.kumararaja.techaptitude;
+package com.kumararaja.techaptitude.Fragment;
 
 
 import android.content.Context;
@@ -11,12 +11,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import com.kumararaja.Adapter.AnalyticalAdapter;
-import com.kumararaja.Adapter.NumericAdapter;
-import com.kumararaja.Adapter.VerbalAdapter;
-import com.kumararaja.Model.NumericModelData;
+import com.kumararaja.techaptitude.Adapter.AnalyticalAdapter;
+import com.kumararaja.techaptitude.Model.NumericModelData;
+import com.kumararaja.techaptitude.Activity.AnalyticalQuestions;
+import com.kumararaja.techaptitude.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,7 +69,7 @@ public class AnalyticFragment extends Fragment implements AnalyticalAdapter.OnAD
     @Override
     public void dataClick(int position) {
         Log.v("CurrentPosition",""+position);
-        Intent i =new Intent(getActivity(),AnalyticalQuestions.class);
+        Intent i =new Intent(getActivity(), AnalyticalQuestions.class);
         i.putExtra("Data",model().get(position));
         startActivity(i);
 

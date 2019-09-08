@@ -1,5 +1,4 @@
-package com.kumararaja.techaptitude;
-
+package com.kumararaja.techaptitude.Fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,18 +11,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.kumararaja.Adapter.NumericAdapter;
-import com.kumararaja.Adapter.VerbalAdapter;
-import com.kumararaja.Model.NumericModelData;
+import com.kumararaja.techaptitude.Activity.QuestionSets;
+import com.kumararaja.techaptitude.Adapter.VerbalAdapter;
+import com.kumararaja.techaptitude.Model.NumericModelData;
+import com.kumararaja.techaptitude.R;
+import com.kumararaja.techaptitude.Activity.VerbalQuestions;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
-public class VerbalFragment extends Fragment implements VerbalAdapter.OnDataListener {
+public class VerbalTestFragment extends Fragment implements VerbalAdapter.OnDataListener {
 
     Context context;
     RecyclerView recyclerView;
@@ -31,7 +28,7 @@ public class VerbalFragment extends Fragment implements VerbalAdapter.OnDataList
     RecyclerView.LayoutManager recylerViewLayoutManager;
 
 
-    public VerbalFragment() {
+    public VerbalTestFragment() {
         // Required empty public constructor
     }
 
@@ -65,8 +62,8 @@ public class VerbalFragment extends Fragment implements VerbalAdapter.OnDataList
     @Override
     public void dataClick(int position) {
         Log.v("Clicked", "" + position);
-        Intent i =new Intent(getActivity(),VerbalQuestions.class);
-        i.putExtra("Items",model().get(position));
+        Intent i = new Intent(getActivity(), QuestionSets.class);
+        i.putExtra("Items", model().get(position));
         startActivity(i);
 
     }

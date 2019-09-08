@@ -1,4 +1,4 @@
-package com.kumararaja.Model;
+package com.kumararaja.techaptitude.Model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

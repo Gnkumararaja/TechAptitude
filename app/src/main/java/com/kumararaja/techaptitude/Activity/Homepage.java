@@ -1,4 +1,4 @@
-package com.kumararaja.techaptitude;
+package com.kumararaja.techaptitude.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +9,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 import android.widget.Toolbar;
+
+import com.kumararaja.techaptitude.R;
 
 public class Homepage extends AppCompatActivity {
 
@@ -36,7 +37,7 @@ public class Homepage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(Homepage.this,TesttypeActivity.class);
+                Intent i = new Intent(Homepage.this, TesttypeActivity.class);
                 startActivity(i);
 
             }

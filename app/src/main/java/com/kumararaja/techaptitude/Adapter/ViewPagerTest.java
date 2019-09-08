@@ -1,18 +1,21 @@
-package com.kumararaja.techaptitude;
+package com.kumararaja.techaptitude.Adapter;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-public class ViewPagerAdapter extends FragmentPagerAdapter {
+import com.kumararaja.techaptitude.Fragment.AnalyticTestFragment;
+import com.kumararaja.techaptitude.Fragment.NumericTestFragment;
+import com.kumararaja.techaptitude.Fragment.VerbalTestFragment;
+
+public class ViewPagerTest extends FragmentPagerAdapter {
 
     private Context mycontext;
     int totaltab;
 
-    public ViewPagerAdapter(Context context,FragmentManager fm, int total) {
+    public ViewPagerTest(Context context, FragmentManager fm, int total) {
         super(fm);
         mycontext=context;
         totaltab=total;
@@ -25,16 +28,16 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int pos) {
         switch (pos){
             case 0:
-                NumericFragment fragmentone=new NumericFragment();
+                NumericTestFragment fragmentone=new NumericTestFragment();
                 return fragmentone;
             case 1:
-                VerbalFragment fragmenttwo = new VerbalFragment();
+                VerbalTestFragment fragmenttwo = new VerbalTestFragment();
                 return fragmenttwo;
             case 2:
-                AnalyticFragment fragmentthree = new AnalyticFragment();
+                AnalyticTestFragment fragmentthree = new AnalyticTestFragment();
                 return fragmentthree;
-                default:
-                    return null;
+            default:
+                return null;
         }
 
     }

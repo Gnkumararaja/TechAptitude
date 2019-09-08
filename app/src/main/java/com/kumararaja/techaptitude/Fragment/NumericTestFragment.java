@@ -1,33 +1,25 @@
-package com.kumararaja.techaptitude;
-
+package com.kumararaja.techaptitude.Fragment;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
 
-import com.kumararaja.Adapter.NumericAdapter;
-import com.kumararaja.Model.NumericModelData;
+import com.kumararaja.techaptitude.Adapter.NumericAdapter;
+import com.kumararaja.techaptitude.Model.NumericModelData;
+import com.kumararaja.techaptitude.Activity.QuestionSets;
+import com.kumararaja.techaptitude.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
-public class NumericFragment extends Fragment implements NumericAdapter.OnDataListener {
+public class NumericTestFragment extends Fragment implements NumericAdapter.OnDataListener {
 
     Context context;
     RecyclerView recyclerView;
@@ -45,10 +37,10 @@ public class NumericFragment extends Fragment implements NumericAdapter.OnDataLi
             };*/
 
     //Context context;
-  /*  private ArrayList<NumericModelData> model;*/
+    /*  private ArrayList<NumericModelData> model;*/
 
 
-    public NumericFragment() {
+    public NumericTestFragment() {
         // Required empty public constructor
     }
 
@@ -63,7 +55,7 @@ public class NumericFragment extends Fragment implements NumericAdapter.OnDataLi
         recyclerView = v.findViewById(R.id.numeric_recycle);
         recylerViewLayoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(recylerViewLayoutManager);
-        recyclerViewAdapter = new NumericAdapter(fill_data(),context, this);
+        recyclerViewAdapter = new NumericAdapter(fill_data(), context, this);
         recyclerView.setAdapter(recyclerViewAdapter);
 
         Log.v("LogData", "RecyclerViewtwo");
@@ -78,8 +70,8 @@ public class NumericFragment extends Fragment implements NumericAdapter.OnDataLi
     @Override
     public void dataClick(int position) {
         Log.v("Click", "Clicked" + position);
-        Intent i = new Intent(getActivity(),NumericQuestions.class);
-        i.putExtra("Item",fill_data().get(position));
+        Intent i = new Intent(getActivity(), QuestionSets.class);
+        i.putExtra("Item", fill_data().get(position));
         startActivity(i);
 
     }
@@ -88,14 +80,14 @@ public class NumericFragment extends Fragment implements NumericAdapter.OnDataLi
 
         List<NumericModelData> data = new ArrayList<>();
 
-        data.add(new NumericModelData("ARITHMATIC" ));
+        data.add(new NumericModelData("ARITHMATIC"));
         data.add(new NumericModelData("LOGIC"));
         data.add(new NumericModelData("REASONING"));
         data.add(new NumericModelData("MATHEMATICS"));
         data.add(new NumericModelData("WORD PROBLEMS"));
         data.add(new NumericModelData("BLOOD RELATIONS"));
 
-    return data;
+        return data;
     }
 
 }

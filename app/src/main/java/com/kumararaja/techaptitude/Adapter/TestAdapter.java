@@ -1,4 +1,4 @@
-package com.kumararaja.Adapter;
+package com.kumararaja.techaptitude.Adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -7,11 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.kumararaja.Model.NumericModelData;
+import com.kumararaja.techaptitude.Model.NumericModelData;
 import com.kumararaja.techaptitude.R;
-import com.kumararaja.techaptitude.TesttypeActivity;
 
 import java.util.Collections;
 import java.util.List;

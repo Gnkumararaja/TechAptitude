@@ -1,8 +1,10 @@
-package com.kumararaja.techaptitude;
+package com.kumararaja.techaptitude.Activity;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.kumararaja.techaptitude.R;
 
 public class ForgetPassword extends AppCompatActivity {
 

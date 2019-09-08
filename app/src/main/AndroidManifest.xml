@@ -9,24 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CategoryTest"></activity>
-        <activity android:name=".SplashscreenActivity">
+        <activity android:name=".Activity.CategoryTest"></activity>
+        <activity android:name=".Activity.SplashscreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".QuestionSets" />
-        <activity android:name=".VerbalQuestions" />
-        <activity android:name=".NumericQuestions" />
-        <activity android:name=".AnalyticalQuestions" />
-        <activity android:name=".TesttypeActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".ForgetPassword" />
-        <activity android:name=".CategoryClass" />
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".Homepage" />
+        <activity android:name=".Activity.QuestionSets" />
+        <activity android:name=".Activity.VerbalQuestions" />
+        <activity android:name=".Activity.NumericQuestions" />
+        <activity android:name=".Activity.AnalyticalQuestions" />
+        <activity android:name=".Activity.TesttypeActivity" />
+        <activity android:name=".Activity.ProfileActivity" />
+        <activity android:name=".Activity.ForgetPassword" />
+        <activity android:name=".Activity.CategoryClass" />
+        <activity android:name=".Activity.MainActivity"></activity>
+        <activity android:name=".Activity.Homepage" />
     </application>
 
 </manifest>

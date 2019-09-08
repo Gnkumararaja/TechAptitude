@@ -1,9 +1,11 @@
-package com.kumararaja.techaptitude;
+package com.kumararaja.techaptitude.Activity;
 
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.kumararaja.techaptitude.R;
 
 public class SplashscreenActivity extends AppCompatActivity {
 

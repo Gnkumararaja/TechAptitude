@@ -1,4 +1,4 @@
-package com.kumararaja.techaptitude;
+package com.kumararaja.techaptitude.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.kumararaja.Model.NumericModelData;
+import com.kumararaja.techaptitude.Model.NumericModelData;
+import com.kumararaja.techaptitude.R;
 
 public class AnalyticalQuestions extends AppCompatActivity {
 

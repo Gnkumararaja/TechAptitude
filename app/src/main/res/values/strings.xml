@@ -19,6 +19,7 @@
     <string name="easyq">Easy</string>
     <string name="normalq">Normal</string>
     <string name="hardq">Hard</string>
+    <string name="editprofile">Edit Profile</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string-array name="sub_category">

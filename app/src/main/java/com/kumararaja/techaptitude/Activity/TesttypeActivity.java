@@ -1,4 +1,4 @@
-package com.kumararaja.techaptitude;
+package com.kumararaja.techaptitude.Activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,8 +7,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.kumararaja.Adapter.TestAdapter;
-import com.kumararaja.Model.NumericModelData;
+import com.kumararaja.techaptitude.Adapter.TestAdapter;
+import com.kumararaja.techaptitude.Model.NumericModelData;
+import com.kumararaja.techaptitude.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +47,7 @@ public class TesttypeActivity extends AppCompatActivity implements TestAdapter.O
 
     @Override
     public void dataClick(int position) {
-        Intent i = new Intent(this,CategoryClass.class);
+        Intent i = new Intent(this,CategoryTest.class);
         i.putExtra("Data_items",model().get(position));
         startActivity(i);
     }

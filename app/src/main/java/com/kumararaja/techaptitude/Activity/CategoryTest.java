@@ -1,29 +1,24 @@
-package com.kumararaja.techaptitude;
+package com.kumararaja.techaptitude.Activity;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.widget.TabHost;
-import android.widget.Toast;
+import android.os.Bundle;
 
-public class CategoryClass extends AppCompatActivity {
+import com.kumararaja.techaptitude.Adapter.ViewPagerTest;
+import com.kumararaja.techaptitude.R;
 
+public class CategoryTest extends AppCompatActivity {
     private ViewPager viewPager;
     private TabLayout tab;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_category_activitty);
-        ActionBar ab=getSupportActionBar();
-        ab.setTitle("Aptitude");
+        setContentView(R.layout.activity_category_test);
 
-        tab = findViewById(R.id.tablayout);
-        viewPager = findViewById(R.id.pager);
+        tab = findViewById(R.id.testc_tablayout);
+        viewPager = findViewById(R.id.testc_pager);
 
         tab.addTab(tab.newTab().setText("Numeric"));
         tab.addTab(tab.newTab().setText("Verbal"));
@@ -31,7 +26,7 @@ public class CategoryClass extends AppCompatActivity {
         tab.setTabGravity(TabLayout.GRAVITY_FILL);
 
 
-        final ViewPagerAdapter adapter = new ViewPagerAdapter(this, getSupportFragmentManager(), tab.getTabCount());
+        final ViewPagerTest adapter = new ViewPagerTest(this, getSupportFragmentManager(), tab.getTabCount());
         viewPager.setAdapter(adapter);
 
 
@@ -53,6 +48,5 @@ public class CategoryClass extends AppCompatActivity {
 
             }
         });
-
     }
 }
