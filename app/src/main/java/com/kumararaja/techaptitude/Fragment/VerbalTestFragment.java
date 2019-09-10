@@ -50,11 +50,11 @@ public class VerbalTestFragment extends Fragment implements VerbalAdapter.OnData
     private List<NumericModelData.Verbal> model() {
         List<NumericModelData.Verbal> data = new ArrayList<>();
 
-        data.add(new NumericModelData.Verbal("SPOTTING ERRORS"));
-        data.add(new NumericModelData.Verbal("IDOMS AND PHRASES"));
-        data.add(new NumericModelData.Verbal("ANONYMS"));
-        data.add(new NumericModelData.Verbal("SYNONYMS"));
-        data.add(new NumericModelData.Verbal("VOCABULARY"));
+        data.add(new NumericModelData.Verbal("Spotting Errors"));
+        data.add(new NumericModelData.Verbal("Idoms and Phrases"));
+        data.add(new NumericModelData.Verbal("Anonyms"));
+        data.add(new NumericModelData.Verbal("Synonyms"));
+        data.add(new NumericModelData.Verbal("Vocabulary"));
 
         return data;
     }

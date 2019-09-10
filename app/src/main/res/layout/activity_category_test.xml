@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabTextColor="#ffffff"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
         app:tabIndicatorColor="@android:color/white"
         app:tabIndicatorHeight="4dp">
 

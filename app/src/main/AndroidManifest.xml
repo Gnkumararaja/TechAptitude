@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.CategoryTest"></activity>
+        <activity android:name=".Activity.CategoryTest" />
         <activity android:name=".Activity.SplashscreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +25,7 @@
         <activity android:name=".Activity.ProfileActivity" />
         <activity android:name=".Activity.ForgetPassword" />
         <activity android:name=".Activity.CategoryClass" />
-        <activity android:name=".Activity.MainActivity"></activity>
+        <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Activity.Homepage" />
     </application>
 

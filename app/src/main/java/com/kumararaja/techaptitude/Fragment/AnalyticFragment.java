@@ -56,11 +56,11 @@ public class AnalyticFragment extends Fragment implements AnalyticalAdapter.OnAD
     private List<NumericModelData.Analytic> model(){
         List<NumericModelData.Analytic> data = new ArrayList<>();
 
-        data.add(new NumericModelData.Analytic("ANALOGY"));
-        data.add(new NumericModelData.Analytic("CLASSIFICATION"));
-        data.add(new NumericModelData.Analytic("CLOCKS"));
-        data.add(new NumericModelData.Analytic("CUBES"));
-        data.add(new NumericModelData.Analytic("DICE"));
+        data.add(new NumericModelData.Analytic("Analogy"));
+        data.add(new NumericModelData.Analytic("Classification"));
+        data.add(new NumericModelData.Analytic("Clocks"));
+        data.add(new NumericModelData.Analytic("Cubes"));
+        data.add(new NumericModelData.Analytic("Dice"));
 
 
         return data;

@@ -80,12 +80,12 @@ public class NumericTestFragment extends Fragment implements NumericAdapter.OnDa
 
         List<NumericModelData> data = new ArrayList<>();
 
-        data.add(new NumericModelData("ARITHMATIC"));
-        data.add(new NumericModelData("LOGIC"));
-        data.add(new NumericModelData("REASONING"));
-        data.add(new NumericModelData("MATHEMATICS"));
-        data.add(new NumericModelData("WORD PROBLEMS"));
-        data.add(new NumericModelData("BLOOD RELATIONS"));
+        data.add(new NumericModelData("Arithmatic"));
+        data.add(new NumericModelData("Logic"));
+        data.add(new NumericModelData("Reasoning"));
+        data.add(new NumericModelData("Mathematics"));
+        data.add(new NumericModelData("Word Problems"));
+        data.add(new NumericModelData("Blood Relations"));
 
         return data;
     }

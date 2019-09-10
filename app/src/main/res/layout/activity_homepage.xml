@@ -46,8 +46,9 @@
 
                 <Button
                     android:id="@+id/btn_practise"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:layout_width="280dp"
+                    android:layout_height="55dp"
                     android:background="@drawable/button_background_two"
                     android:fontFamily="sans-serif-condensed"
                     android:padding="5dp"
@@ -69,11 +70,12 @@
                 <Button
                     android:fontFamily="sans-serif-condensed"
                     android:textSize="24dp"
+                    android:textAllCaps="false"
                     android:textColor="@android:color/white"
                     android:background="@drawable/button_background_one"
                     android:id="@+id/btn_taketest"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="280dp"
+                    android:layout_height="55dp"
                     android:padding="5dp"
                     android:text="@string/btn_taketest" />
 

@@ -13,13 +13,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/background_profile">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@color/colorPrimary">
+            >
 
             <ImageView
                 android:id="@+id/profile_pic"
@@ -54,16 +55,17 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/detail_img" />
+                    android:layout_height="match_parent"
+                    android:src="@drawable/user_profile" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-condensed"
                     android:text="Details"
-                    android:textStyle="bold"
-                    android:textSize="25dp" />
+                    android:textColor="@android:color/white"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -73,6 +75,7 @@
                 android:layout_marginLeft="25dp">
 
                 <TextView
+                    android:textColor="@android:color/white"
                     android:padding="2dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -81,6 +84,7 @@
                     android:textSize="18dp" />
 
                 <TextView
+                    android:textColor="@android:color/white"
                     android:id="@+id/txtname"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -99,6 +103,7 @@
                 android:layout_marginLeft="25dp">
 
                 <TextView
+                    android:textColor="@android:color/white"
                     android:padding="2dp"
                     android:text="Email :"
                     android:textSize="18dp"
@@ -107,6 +112,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:textColor="@android:color/white"
                     android:padding="2dp"
                     android:id="@+id/txtEmail"
                     android:text="Kumar@gmail.com"
@@ -125,6 +131,7 @@
                 android:layout_marginLeft="25dp">
 
                 <TextView
+                    android:textColor="@android:color/white"
                     android:padding="2dp"
                     android:text="Mobile :"
                     android:textSize="18dp"
@@ -133,6 +140,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:textColor="@android:color/white"
                     android:padding="2dp"
                     android:id="@+id/txtmobile"
                     android:text="8526763465"
@@ -150,6 +158,7 @@
                 android:layout_marginLeft="25dp">
 
                 <TextView
+                    android:textColor="@android:color/white"
                     android:padding="2dp"
                     android:text="Dob :"
                     android:textSize="18dp"
@@ -158,6 +167,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:textColor="@android:color/white"
                     android:padding="2dp"
                     android:id="@+id/txtDob"
                     android:text="17/1/1978"
@@ -175,6 +185,7 @@
                 android:layout_marginLeft="25dp">
 
                 <TextView
+                    android:textColor="@android:color/white"
                     android:padding="2dp"
                     android:text="Age :"
                     android:textSize="18dp"
@@ -183,6 +194,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:textColor="@android:color/white"
                     android:padding="2dp"
                     android:id="@+id/txtAge"
                     android:text="22"
@@ -219,9 +231,10 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:src="@drawable/education_img" />
+                    android:src="@drawable/edu_logo" />
 
                 <TextView
+                    android:textColor="@android:color/white"
                     android:textStyle="bold"
                     android:textSize="25dp"
                     android:layout_width="wrap_content"
@@ -234,11 +247,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:src="@drawable/navigate_nxt_blue" />
+                    <ImageView
+                        android:id="@+id/education_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:src="@drawable/navigate_view" />
                 </LinearLayout>
                 </LinearLayout>
 
@@ -249,6 +263,7 @@
                 android:layout_marginLeft="25dp">
 
                 <TextView
+                    android:textColor="@android:color/white"
                     android:padding="2dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -257,6 +272,7 @@
                     android:textSize="18dp" />
 
                 <TextView
+                    android:textColor="@android:color/white"
                     android:padding="2dp"
                     android:id="@+id/txtpg"
                     android:text="85"
@@ -275,6 +291,7 @@
                 android:layout_marginLeft="25dp">
 
                 <TextView
+                    android:textColor="@android:color/white"
                     android:padding="2dp"
                     android:text="UG % :"
                     android:textSize="18dp"
@@ -283,6 +300,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:textColor="@android:color/white"
                     android:padding="2dp"
                     android:id="@+id/txtUg"
                     android:text="88"
@@ -301,6 +319,7 @@
                 android:layout_marginLeft="25dp">
 
                 <TextView
+                    android:textColor="@android:color/white"
                     android:padding="2dp"
                     android:text="SSC % :"
                     android:textSize="18dp"
@@ -309,6 +328,7 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
+                    android:textColor="@android:color/white"
                     android:padding="2dp"
                     android:id="@+id/txtssc"
                     android:text="85"
@@ -343,9 +363,10 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:src="@drawable/place_img" />
+                    android:src="@drawable/place_logo" />
 
             <TextView
+                android:textColor="@android:color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
@@ -359,10 +380,11 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
+                        android:id="@+id/place_edit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
-                        android:src="@drawable/navigate_nxt_blue" />
+                        android:src="@drawable/navigate_view" />
                 </LinearLayout>
         </LinearLayout>
 
@@ -373,6 +395,7 @@
                 android:layout_marginLeft="25dp">
 
                 <TextView
+                    android:textColor="@android:color/white"
                     android:padding="2dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -381,14 +404,15 @@
                     android:textSize="18dp" />
 
                 <Spinner
-                    android:padding="2dp"
                     android:id="@+id/txtstate"
+                    android:popupBackground="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-condensed"
+                    android:padding="2dp"
                     android:text="Tamilnadu"
                     android:textSize="18dp"
-                    android:textStyle="bold"
-                    android:fontFamily="sans-serif-condensed"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -399,21 +423,23 @@
                 android:layout_marginLeft="25dp">
 
                 <TextView android:padding="2dp"
+                    android:textColor="@android:color/white"
                     android:text="City :"
                     android:textSize="18dp"
                     android:fontFamily="sans-serif-condensed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
-                <TextView
-                    android:padding="2dp"
+                <Spinner
                     android:id="@+id/txtcity"
-                    android:text="Chennai"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    android:fontFamily="sans-serif-condensed"
+                    android:popupBackground="@android:color/white"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-condensed"
+                    android:padding="2dp"
+                    android:text="Tamilnadu"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -427,6 +453,7 @@
             android:layout_marginBottom="5dp">
 
             <TextView
+                android:id="@+id/signout"
                 android:textSize="22dp"
                 android:textColor="@android:color/holo_red_light"
                 android:text="Sign Out"
