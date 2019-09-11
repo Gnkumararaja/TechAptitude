@@ -5,13 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.Toast;
 
 import com.kumararaja.techaptitude.R;
 
 public class QuestionSets extends AppCompatActivity {
-    GridView gridView;
+    GridLayout gridView;
     String[] sets=new String[]{ "1","2","3","4","5"};
 
     @Override
@@ -32,14 +33,14 @@ public class QuestionSets extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        ArrayAdapter<String> adt=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,sets);
+        /*ArrayAdapter<String> adt=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,sets);
         gridView.setAdapter(adt);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(QuestionSets.this, "Working", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
 
     }
