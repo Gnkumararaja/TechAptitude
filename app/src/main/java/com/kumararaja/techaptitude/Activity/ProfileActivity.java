@@ -28,11 +28,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kumararaja.techaptitude.R;
+import com.kumararaja.techaptitude.Utilities.RoundedImage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProfileActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class ProfileActivity extends AppCompatActivity {
     Spinner spinner,spinner1;
     TextView signout,pg,ug,ssc;
     ImageView education,place,profilepic;
@@ -169,25 +171,6 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
         } else {
             ActivityCompat.requestPermissions(ProfileActivity.this,PERMISSIONS,REQUEST_CODE);
         }
-/*
-        int permissionReadEx = ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE);
-
-        int permissionWriteEx = ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-
-
-        if (permissionReadEx!= PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(
-                    MainActivity.this,
-                    PERMISSIONS,REQUEST_CODE
-            );
-        }
-
-        if (permissionWriteEx!=PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(
-                    MainActivity.this,
-                    PERMISSIONS,REQUEST_CODE
-            );
-        }*/
     }
 
     @Override
@@ -209,40 +192,25 @@ public class ProfileActivity extends AppCompatActivity implements AdapterView.On
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (resultCode== Activity.RESULT_CANCELED) {
+        if (resultCode == Activity.RESULT_CANCELED) {
             return;
         }
-        if (requestCode==GALLERY){
-            if (data!=null){
-                Uri contentUri=data.getData();
-               /* try {
-                    Bitmap bitmap=MediaStore.Images.Media.getBitmap(this,getContentResolver(),contentUri);
-                    String path=
-                }*/
+        if (requestCode == GALLERY) {
+            Log.e("GalleryResponse", "" + data.getData());
+            data.getData();
+            Bitmap bmp = null;
+            try {
+                bmp = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+            profilepic.setImageBitmap(new RoundedImage(ProfileActivity.this).transform(bmp));
+        } else if (requestCode == CAMERA) {
+            Bitmap bmpp = (Bitmap) data.getExtras().get("data");
+            profilepic.setImageBitmap(new RoundedImage(ProfileActivity.this).transform(bmpp));
         }
-        }
-
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-        String item=parent.getItemAtPosition(position).toString();
-        Toast.makeText(this, "Selected"+item, Toast.LENGTH_SHORT).show();
-        switch (position){
-    case 0:
-        break;
-    case 1:
-        break;
-    case 2:
-        break;
-    case 3:
-        break;
-}
     }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
 
-    }
+
 }
