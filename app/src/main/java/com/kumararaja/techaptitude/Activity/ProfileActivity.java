@@ -97,7 +97,7 @@ public class ProfileActivity extends AppCompatActivity {
                 AlertDialog.Builder pictureDialog=new AlertDialog.Builder(ProfileActivity.this);
                 pictureDialog.setTitle("Select Action");
                 String[] pictureDialogItems={
-                        "Gallery","Camera"
+                        "Gallery","Camera","Remove"
                 };
                 pictureDialog.setItems(pictureDialogItems, new DialogInterface.OnClickListener() {
                     @Override
@@ -108,6 +108,9 @@ public class ProfileActivity extends AppCompatActivity {
                                     break;
                                 case 1:
                                     takePhoto();
+                                    break;
+                                case 2:
+                                    removePhoto();
                                     break;
                             }
                     }
@@ -187,6 +190,11 @@ public class ProfileActivity extends AppCompatActivity {
     private void takePhoto(){
         Intent i =new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(i,CAMERA);
+
+    }
+
+    private void removePhoto(){
+        profilepic.setImageResource(R.drawable.profile_img);
 
     }
 
