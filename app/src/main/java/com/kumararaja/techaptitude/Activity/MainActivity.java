@@ -3,8 +3,13 @@ package com.kumararaja.techaptitude.Activity;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
@@ -12,11 +17,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kumararaja.techaptitude.R;
+import com.kumararaja.techaptitude.Utilities.RoundedImage;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,31 +40,41 @@ public class MainActivity extends AppCompatActivity {
             Manifest.permission.CAMERA};
 
 
-    EditText username, password;
+    TextInputLayout username, password;
     Button login;
     TextView forget;
+    ImageView image;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide(); // hide the title bar
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
         setContentView(R.layout.activity_main);
+
         init();
         ActionBar ab=getSupportActionBar();
         ab.setTitle("Aptitude");
+
+      Bitmap a= BitmapFactory.decodeResource(this.getResources(),R.drawable.apple);
+        image.setImageBitmap(new RoundedImage(MainActivity.this).transform(a));
 
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (username.getText().toString().trim().equalsIgnoreCase("")) {
+                /*if (username.getText().toString().trim().equalsIgnoreCase("")) {
                     username.setError("Error");
                 } else {
                     if (password.getText().toString().trim().equalsIgnoreCase("")) {
                         password.setError("Error");
                     } else {
-                        Intent i = new Intent(MainActivity.this, Homepage.class);
-                        startActivity(i);
+
                     }
-                }
+                }*/
+
+                Intent i = new Intent(MainActivity.this, Homepage.class);
+                startActivity(i);
 
             }
         });
@@ -75,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         forget = findViewById(R.id.t_forget_password);
         login = findViewById(R.id.btn_login);
+        image=findViewById(R.id.login_image);
         verifyPermissions();
     }
 
